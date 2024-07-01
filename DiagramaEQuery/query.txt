@@ -1,0 +1,13 @@
+SELECT 
+    c.codigo,
+    c.razao_social,
+    c.email,
+    t.telefone
+FROM 
+    cliente c
+JOIN 
+    estado e ON c.estadoId = e.id
+JOIN 
+    telefone t ON c.id = t.clienteId
+WHERE 
+    e.codigo = 'SP'
